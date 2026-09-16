@@ -605,12 +605,17 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="open-your-positron-session" class="slide level2" data-number="2.3">
-<h2><span class="header-section-number">2.3</span> 2. Open your Positron session</h2>
-<p>In Workbench, start the session and choose the <strong>Positron</strong> IDE.</p>
-<p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A is R (admiral), Section B’s report generator is Python (<code>python-docx</code>), and Section C touches both. One session covers everything.</p>
+<section id="fork-the-workshop-repo" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> 2. Fork the workshop repo</h2>
+<p>On GitHub, fork <strong>jeffreyad/rpharma-2026-workshop</strong> to your own account.</p>
+<ul>
+<li>Section C has you modify and sketch a skill — forking gives you somewhere of your own to keep that work after the session ends</li>
+<li>You’re already signed in with GitHub/OpenID, so this is one extra click</li>
+<li>Optional stretch: open a PR back to the source <strong>pharma-skills</strong> project</li>
+</ul>
 <aside class="notes">
-<p>[CONFIRM WITH JEFF: does each attendee land in a pre-cloned copy of the workshop repo, or clone it themselves as step one? <code>git clone https://github.com/jeffreyad/rpharma-2026-workshop.git</code>]</p>
+<p>[CONFIRM WITH JEFF: is this step actually needed, or does the preconfigured environment already persist each attendee’s work some other way (e.g.&nbsp;a per-user workspace that survives session end)? If it does, cut this slide — don’t add GitHub mechanics to a 3-hour session unless they buy something.</p>
+<p>If we keep it: fork on github.com takes a few clicks and can happen before or while Positron is loading. The next step then clones <em>the attendee’s fork</em>, not the upstream repo, so <code>git push</code> works without a permissions prompt.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -623,10 +628,29 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="confirm-youre-ready" class="slide level2" data-number="2.4">
-<h2><span class="header-section-number">2.4</span> 3. Confirm you’re ready</h2>
+<section id="open-your-positron-session" class="slide level2" data-number="2.4">
+<h2><span class="header-section-number">2.4</span> 3. Open your Positron session</h2>
+<p>In Workbench, start the session and choose the <strong>Positron</strong> IDE.</p>
+<p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A is R (admiral), Section B’s report generator is Python (<code>python-docx</code>), and Section C touches both. One session covers everything.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/rpharma-2026-workshop.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>[CONFIRM WITH JEFF: does each attendee land in a pre-cloned copy already, or clone their own fork as shown here? If pre-cloned, add a step to point the <code>origin</code> remote at their fork (or add it as a second remote) so Section C work can still be pushed somewhere persistent: <code>git remote set-url origin https://github.com/&lt;your-username&gt;/rpharma-2026-workshop.git</code>]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="confirm-youre-ready" class="slide level2" data-number="2.5">
+<h2><span class="header-section-number">2.5</span> 4. Confirm you’re ready</h2>
 <p>From the repo root:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">source</span>(<span class="st">"check_setup.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">source</span>(<span class="st">"check_setup.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prints <code>[ OK ]</code> / <code>[WARN]</code> / <code>[FAIL]</code> per line for:</p>
 <ul>
 <li>R ≥ 4.2 and the admiral set (<code>admiral</code> ≥ 1.2.0, <code>dplyr</code>, <code>lubridate</code>, <code>pharmaversesdtm</code>, <code>pharmaverseadam</code>, <code>metacore</code>, <code>xportr</code>)</li>
@@ -648,8 +672,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="you-should-now-see" class="slide level2" data-number="2.5">
-<h2><span class="header-section-number">2.5</span> You should now see…</h2>
+<section id="you-should-now-see" class="slide level2" data-number="2.6">
+<h2><span class="header-section-number">2.6</span> You should now see…</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -664,7 +688,7 @@ Eric Zhang, PhD
 </div>
 </div>
 <ul>
-<li>Positron open in your browser, with the workshop repo in the Explorer</li>
+<li>Positron open in your browser, with <strong>your fork</strong> of the workshop repo in the Explorer</li>
 <li><code>check_setup.R</code> output showing <strong>all checks passed</strong> (no red)</li>
 <li>An R console and a Python console both available</li>
 </ul>
@@ -688,8 +712,8 @@ Eric Zhang, PhD
 <h1>Section A — ADaM generation</h1>
 
 </section>
-<section id="section-a-what-well-do" class="slide level2" data-number="2.6">
-<h2><span class="header-section-number">2.6</span> Section A — what we’ll do</h2>
+<section id="section-a-what-well-do" class="slide level2" data-number="2.7">
+<h2><span class="header-section-number">2.7</span> Section A — what we’ll do</h2>
 <p>Drive the <strong>admiral</strong> skill family to derive ADaM datasets from SDTM:</p>
 <table class="caption-top">
 <thead>
@@ -739,8 +763,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.7">
-<h2><span class="header-section-number">2.7</span> Section A — how the skill behaves</h2>
+<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.8">
+<h2><span class="header-section-number">2.8</span> Section A — how the skill behaves</h2>
 <p>When you ask for a derivation, the skilled agent will:</p>
 <ul>
 <li>Generate code <strong>section by section</strong>, not one giant block</li>
@@ -764,8 +788,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Section A — hands-on exercise</h2>
+<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.9">
+<h2><span class="header-section-number">2.9</span> Section A — hands-on exercise</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -801,8 +825,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-debrief" class="slide level2" data-number="2.9">
-<h2><span class="header-section-number">2.9</span> Section A — debrief</h2>
+<section id="section-a-debrief" class="slide level2" data-number="2.10">
+<h2><span class="header-section-number">2.10</span> Section A — debrief</h2>
 <ul>
 <li>Where did the agent place <code># REVIEW:</code> markers, and were they the right places?</li>
 <li>What did <em>you</em> have to decide that the skill correctly refused to guess?</li>
@@ -827,8 +851,8 @@ Eric Zhang, PhD
 <h1>Section B — Group sequential design</h1>
 
 </section>
-<section id="section-b-what-well-do" class="slide level2" data-number="2.10">
-<h2><span class="header-section-number">2.10</span> Section B — what we’ll do</h2>
+<section id="section-b-what-well-do" class="slide level2" data-number="2.11">
+<h2><span class="header-section-number">2.11</span> Section B — what we’ll do</h2>
 <p>Drive the <strong>group-sequential-design</strong> skill to design a survival trial:</p>
 <ul>
 <li>Survival endpoints (OS / PFS / DFS), interim + final analyses</li>
@@ -854,8 +878,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.11">
-<h2><span class="header-section-number">2.11</span> Section B — how the skill behaves</h2>
+<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.12">
+<h2><span class="header-section-number">2.12</span> Section B — how the skill behaves</h2>
 <ul>
 <li>Asks design questions <strong>one at a time</strong>, in plain language, no defaults offered</li>
 <li>Summarises all inputs in a table and waits for your confirmation</li>
@@ -877,8 +901,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.12">
-<h2><span class="header-section-number">2.12</span> Section B — hands-on exercise</h2>
+<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.13">
+<h2><span class="header-section-number">2.13</span> Section B — hands-on exercise</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -914,8 +938,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-debrief" class="slide level2" data-number="2.13">
-<h2><span class="header-section-number">2.13</span> Section B — debrief</h2>
+<section id="section-b-debrief" class="slide level2" data-number="2.14">
+<h2><span class="header-section-number">2.14</span> Section B — debrief</h2>
 <ul>
 <li>Which constraint was binding — event target, minimum follow-up, or minimum gap?</li>
 <li>Did the simulation confirm the analytic design on the first try?</li>
@@ -940,15 +964,15 @@ Eric Zhang, PhD
 <h1>Section C — Modify, extend, and build a skill</h1>
 
 </section>
-<section id="anatomy-of-a-skill" class="slide level2" data-number="2.14">
-<h2><span class="header-section-number">2.14</span> Anatomy of a skill</h2>
+<section id="anatomy-of-a-skill" class="slide level2" data-number="2.15">
+<h2><span class="header-section-number">2.15</span> Anatomy of a skill</h2>
 <p>Everything the agent needs is plain text and scripts in one folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>skills/admiral/admiral-adsl/</span>
-<span id="cb2-2"><a href=""></a>├── SKILL.md                     # frontmatter + step-by-step workflow</span>
-<span id="cb2-3"><a href=""></a>├── references/</span>
-<span id="cb2-4"><a href=""></a>│   ├── admiral-functions.md     # function selection, pitfalls</span>
-<span id="cb2-5"><a href=""></a>│   └── adsl-conventions.md      # CDISC variable conventions</span>
-<span id="cb2-6"><a href=""></a>└── LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>skills/admiral/admiral-adsl/</span>
+<span id="cb3-2"><a href=""></a>├── SKILL.md                     # frontmatter + step-by-step workflow</span>
+<span id="cb3-3"><a href=""></a>├── references/</span>
+<span id="cb3-4"><a href=""></a>│   ├── admiral-functions.md     # function selection, pitfalls</span>
+<span id="cb3-5"><a href=""></a>│   └── adsl-conventions.md      # CDISC variable conventions</span>
+<span id="cb3-6"><a href=""></a>└── LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><strong>Frontmatter</strong> (<code>name</code>, <code>description</code>) is how the agent decides when to load the skill</li>
 <li><strong>Workflow</strong> is ordered steps with code patterns and <code># REVIEW:</code> rules</li>
@@ -969,8 +993,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-c-hands-on" class="slide level2" data-number="2.15">
-<h2><span class="header-section-number">2.15</span> Section C — hands-on</h2>
+<section id="section-c-hands-on" class="slide level2" data-number="2.16">
+<h2><span class="header-section-number">2.16</span> Section C — hands-on</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -989,8 +1013,10 @@ Eric Zhang, PhD
 <li><strong>Modify or extend an existing skill</strong> — [CONFIRM: which skill, what change — e.g.&nbsp;add an <code>AGEGR1</code> cut-point convention, add a new ADAE grouping flag, add a futility-only GSD variant]</li>
 <li><strong>Sketch a skill of your own</strong> — [CONFIRM: starter template / scaffold provided? target task examples for different disciplines?]</li>
 </ol>
+<p>Commit and push to <strong>your fork</strong> as you go — that’s what keeps this after today.</p>
 <aside class="notes">
 <p>DO NOT invent the specific modification or the starter task. Jeff and Eric to decide: the smallest meaningful edit to an existing skill, and a scaffold (frontmatter + empty workflow headings) attendees fill in for a task from their own work. Keep this achievable in ~15 minutes.</p>
+<p>[CONFIRM WITH JEFF: if the “fork the repo” step (Environment orientation, #2) is cut, replace this line with however work actually persists — e.g.&nbsp;“download your skill folder” or “it stays in your Workbench home directory.”]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1003,8 +1029,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-c-debrief" class="slide level2" data-number="2.16">
-<h2><span class="header-section-number">2.16</span> Section C — debrief</h2>
+<section id="section-c-debrief" class="slide level2" data-number="2.17">
+<h2><span class="header-section-number">2.17</span> Section C — debrief</h2>
 <ul>
 <li>What made the existing skill easy or hard to change?</li>
 <li>What is the smallest skill that would still be useful to you at work?</li>
@@ -1054,6 +1080,7 @@ Eric Zhang, PhD
 <section id="take-it-with-you" class="slide level2" data-number="3.2">
 <h2><span class="header-section-number">3.2</span> Take it with you</h2>
 <ul>
+<li><strong>Your fork</strong> — has your Section C work; keep building on it</li>
 <li><strong>Workshop repo:</strong> <a href="https://github.com/jeffreyad/rpharma-2026-workshop" class="uri">https://github.com/jeffreyad/rpharma-2026-workshop</a></li>
 <li><strong>pharma-skills:</strong> <a href="https://github.com/RConsortium/pharma-skills/tree/main" class="uri">https://github.com/RConsortium/pharma-skills/tree/main</a> — full catalog, LIFECYCLE.md, benchmarking</li>
 <li><strong>admiral:</strong> <a href="https://pharmaverse.github.io/admiral/" class="uri">https://pharmaverse.github.io/admiral/</a> · <a href="https://www.cdisc.org/standards/foundational/adam">CDISC ADaMIG v1.3</a></li>
@@ -1061,7 +1088,7 @@ Eric Zhang, PhD
 <li><strong>Submissions Working Group:</strong> <a href="https://rconsortium.github.io/submissions-wg/" class="uri">https://rconsortium.github.io/submissions-wg/</a></li>
 </ul>
 <p>Install into your own project:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="ex">npx</span> skills add RConsortium/pharma-skills <span class="at">--skill</span> admiral-adsl <span class="at">--skill</span> group-sequential-design</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">npx</span> skills add RConsortium/pharma-skills <span class="at">--skill</span> admiral-adsl <span class="at">--skill</span> group-sequential-design</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Also mention Option A from the repo README — open the repo as your project and let its CLAUDE.md route the agent to each skill; set your local Rscript path for the GSD skill.</p>
 <style type="text/css">
