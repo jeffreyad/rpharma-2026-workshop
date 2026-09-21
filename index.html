@@ -257,8 +257,7 @@ Eric Zhang, PhD
 <ul>
 <li><strong>Run AI skills on real-world exercises</strong> — ADaM generation and group sequential design</li>
 <li><strong>See how skills are structured</strong> and how they interact with the AI model</li>
-<li><strong>Modify or extend</strong> an existing skill</li>
-<li><strong>Create a simple skill of your own</strong>, with instructor support</li>
+<li><strong>Practice using the skills</strong>, with instructor support</li>
 <li>Leave with <strong>practical ideas</strong> for applying AI skills to your own work</li>
 </ul>
 <p><em>No prior AI-skills experience required.</em></p>
@@ -287,7 +286,7 @@ Eric Zhang, PhD
 </ul>
 <p>Pick the exercises closest to your work — the ADaM thread, the group sequential design thread, or both.</p>
 <aside class="notes">
-<p>Set expectations: programmers may go deep on Section A, statisticians on Section B, and everyone converges for the skill-authoring section. The environment is preconfigured so no one loses time on setup.</p>
+<p>Set expectations: statisticians may go deep on Section A, programmers on Section B, and everyone converges for the skill-authoring section. The environment is preconfigured so no one loses time on setup.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -305,9 +304,9 @@ Eric Zhang, PhD
 <ol type="1">
 <li>Skills overview — what they are, why they matter</li>
 <li>Environment orientation — sign in, confirm you’re ready</li>
-<li><strong>Section A</strong> — ADaM generation (Jeff)</li>
-<li><strong>Section B</strong> — Group sequential design (Eric)</li>
-<li><strong>Section C</strong> — Modify, extend, and build a skill</li>
+<li><strong>Section A</strong> — Group sequential design (Eric)</li>
+<li><strong>Section B</strong> — ADaM generation (Jeff)</li>
+<li><strong>Section C</strong> — Practice using the skills</li>
 <li>Wrap-up — ideas to take back</li>
 </ol>
 <p>Three hours, one break near the midpoint.</p>
@@ -316,9 +315,9 @@ Eric Zhang, PhD
 <ul>
 <li>8:00–8:25 Welcome + skills overview</li>
 <li>8:25–8:40 Environment orientation</li>
-<li>8:40–9:35 Section A — ADaM</li>
+<li>8:40–9:35 Section A — group sequential design</li>
 <li>9:35–9:45 Break</li>
-<li>9:45–10:40 Section B — group sequential design</li>
+<li>9:45–10:40 Section B — ADaM</li>
 <li>10:40–10:55 Section C — modify / build a skill</li>
 <li>10:55–11:00 Wrap-up</li>
 </ul>
@@ -387,8 +386,51 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="skills-vs.-no-skills-adam-benchmarks" class="slide level2" data-number="1.3">
-<h2><span class="header-section-number">1.3</span> Skills vs.&nbsp;no skills — ADaM benchmarks</h2>
+<section id="skills-vs.-no-skills-group-sequential-design" class="slide level2" data-number="1.3">
+<h2><span class="header-section-number">1.3</span> Skills vs.&nbsp;no skills — group sequential design</h2>
+<p><code>group-sequential-design</code> skill — 21 trial-design scenarios, 3 models (Claude Sonnet / Opus, Gemini Flash), May 2026:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>With skill</th>
+<th>Without skill</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Avg score across scenarios</td>
+<td><strong>90%</strong></td>
+<td>62%</td>
+</tr>
+<tr class="even">
+<td>Scenario wins</td>
+<td><strong>16</strong></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Ties</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="skills-vs.-no-skills-adam-benchmarks" class="slide level2" data-number="1.4">
+<h2><span class="header-section-number">1.4</span> Skills vs.&nbsp;no skills — ADaM benchmarks</h2>
 <p>Community A/B benchmarks in <code>pharma-skills</code> — the <strong>same task</strong>, an agent <strong>with</strong> vs <strong>without</strong> the skill, scored against a methodology rubric:</p>
 <table class="caption-top">
 <thead>
@@ -449,53 +491,6 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="skills-vs.-no-skills-group-sequential-design" class="slide level2" data-number="1.4">
-<h2><span class="header-section-number">1.4</span> Skills vs.&nbsp;no skills — group sequential design</h2>
-<p><code>group-sequential-design</code> skill — 15 trial-design scenarios, 3 models (Claude Sonnet / Opus, Gemini Flash), April 2026:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>With skill</th>
-<th>Without skill</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Avg score across scenarios</td>
-<td><strong>73%</strong></td>
-<td>51%</td>
-</tr>
-<tr class="even">
-<td>Scenario wins</td>
-<td><strong>10</strong></td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>Ties</td>
-<td>2</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p>Standouts: <strong>83% vs 0%</strong> — no-skill crashed on <code>gsSurv()</code> across 7 attempts; <strong>100% vs 44%</strong> — skill self-detected non-proportional hazards and sized 390 events vs 229 (the no-skill design would run at ~28% power).</p>
-<aside class="notes">
-<p>Source: <code>benchmark_analysis_2026-04-28.md</code> in RConsortium/pharma-skills.</p>
-<p>All 3 no-skill “wins” were skill scope-gaps (adaptive enrichment, a futility-only subgroup look) or a sandbox routing bug — not base-model superiority.</p>
-<p>What the skill reliably added across the wins: correct <code>gsSurv()</code> parameterisation (unequal allocation, piecewise hazard, non-constant enrollment); enforced structured artifacts (JSON + multiplicity PNG + Word report); PFS-overpower detection with alpha-reallocation guidance; and a mandatory 5,000–10,000-rep simulation-verification step.</p>
-<p>[CONFIRM WITH ERIC: OK to present these GSD numbers, or do you want a newer run?]</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="the-source-project-pharma-skills" class="slide level2" data-number="1.5">
 <h2><span class="header-section-number">1.5</span> The source project: pharma-skills</h2>
 <p>These skills come from the R Consortium <strong><code>pharma-skills</code></strong> project (Submissions Working Group, Pilot 7; with the BBSW AI committee).</p>
@@ -520,24 +515,23 @@ Eric Zhang, PhD
 <h2><span class="header-section-number">1.6</span> Three threads today</h2>
 <div class="columns">
 <div class="column" style="width:33%;">
-<h3 data-number="1.6.1" id="a-adam-generation"><span class="header-section-number">1.6.1</span> A · ADaM generation</h3>
-<p>Derive analysis datasets from SDTM with <strong>{admiral}</strong>:</p>
-<ul>
-<li><code>admiral</code> (parent)</li>
-<li><code>admiral-adsl</code> → <code>admiral-adae</code> → <code>admiral-bds</code></li>
-</ul>
-</div><div class="column" style="width:33%;">
-<h3 data-number="1.6.2" id="b-group-sequential-design"><span class="header-section-number">1.6.2</span> B · Group sequential design</h3>
+<h3 data-number="1.6.1" id="a-group-sequential-design"><span class="header-section-number">1.6.1</span> A · Group sequential design</h3>
 <p>Design a survival trial with <strong>gsDesign / gsDesign2 / lrstat</strong>:</p>
 <ul>
 <li>Boundaries, sample size, multiplicity</li>
 <li>Simulation verification + Word report</li>
 </ul>
 </div><div class="column" style="width:33%;">
-<h3 data-number="1.6.3" id="c-build-a-skill"><span class="header-section-number">1.6.3</span> C · Build a skill</h3>
+<h3 data-number="1.6.2" id="b-adam-generation"><span class="header-section-number">1.6.2</span> B · ADaM generation</h3>
+<p>Derive analysis datasets from SDTM with <strong>{admiral}</strong>:</p>
 <ul>
-<li>Read a <code>SKILL.md</code> and its references</li>
-<li>Modify / extend one</li>
+<li><code>admiral</code> (parent)</li>
+<li><code>admiral-adsl</code> → <code>admiral-adae</code> → <code>admiral-bds</code></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<h3 data-number="1.6.3" id="c-practice-with-the-skills"><span class="header-section-number">1.6.3</span> C · practice with the skills</h3>
+<ul>
+<li>try skills with an example</li>
 <li>Sketch your own</li>
 </ul>
 </div></div>
@@ -632,7 +626,7 @@ Eric Zhang, PhD
 <section id="open-your-positron-session" class="slide level2" data-number="2.4">
 <h2><span class="header-section-number">2.4</span> 3. Open your Positron session</h2>
 <p>In Workbench, start the session and choose the <strong>Positron</strong> IDE.</p>
-<p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A is R (admiral), Section B’s report generator is Python (<code>python-docx</code>), and Section C touches both. One session covers everything.</p>
+<p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A’s report generator is Python (<code>python-docx</code>), Section B is R (admiral), and Section C touches both. One session covers everything.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/rpharma-2026-workshop.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>[CONFIRM WITH JEFF: does each attendee land in a pre-cloned copy already, or clone their own fork as shown here? If pre-cloned, add a step to point the <code>origin</code> remote at their fork (or add it as a second remote) so Section C work can still be pushed somewhere persistent: <code>git remote set-url origin https://github.com/&lt;your-username&gt;/rpharma-2026-workshop.git</code>]</p>
@@ -711,12 +705,105 @@ Eric Zhang, PhD
       }</style></aside>
 </section></section>
 <section>
-<section id="section-a-adam-generation" class="title-slide slide level1 unnumbered center">
-<h1>Section A — ADaM generation</h1>
+<section id="section-a-group-sequential-design" class="title-slide slide level1 unnumbered center">
+<h1>Section A — Group sequential design</h1>
 
 </section>
 <section id="section-a-what-well-do" class="slide level2" data-number="2.7">
 <h2><span class="header-section-number">2.7</span> Section A — what we’ll do</h2>
+<p>Drive the <strong>group-sequential-design</strong> skill to design a survival trial:</p>
+<ul>
+<li>Survival endpoints (OS / PFS / DFS), interim + final analyses</li>
+<li>Alpha-spending boundaries (Lan-DeMets, Hwang-Shih-DeCani)</li>
+<li>Sample-size / event targets (N-first approach)</li>
+<li>Graphical multiplicity for co-primary / multi-population designs</li>
+<li><strong><code>lrstat</code> simulation</strong> to verify the analytic design</li>
+<li>A template-driven <strong>Word report</strong> (<code>gsd_report.py</code>)</li>
+</ul>
+<aside class="notes">
+<p>Scope note the skill enforces: standard group sequential designs only. Adaptive enrichment, sample-size re-estimation, seamless dose-selection, platform trials, and non-survival primary endpoints are explicitly out of scope — the skill will say so and stop.</p>
+<p>Tools: gsDesign, gsDesign2, lrstat, graphicalMCP, jsonlite (R) + python-docx.</p>
+<p>[CONFIRM WITH ERIC: time budget for Section A within the 3-hour block.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.8">
+<h2><span class="header-section-number">2.8</span> Section A — how the skill behaves</h2>
+<ul>
+<li>Asks design questions <strong>one at a time</strong>, in plain language, no defaults offered</li>
+<li>Summarises all inputs in a table and waits for your confirmation</li>
+<li>Computes the design, then <strong>checks interim-analysis timing</strong> against enrollment and minimum-gap constraints</li>
+<li><strong>Verifies by simulation</strong> before delivering — power within ±2 pp, type I error within ±0.5 pp</li>
+<li>Writes every number to <code>gsd_results.json</code>; the report reads from there (no hardcoded values)</li>
+</ul>
+<aside class="notes">
+<p>The one-artifact-per-turn pacing in the skill means the agent writes a script, stops, runs it, stops, etc. That is intentional — it keeps each step reviewable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.9">
+<h2><span class="header-section-number">2.9</span> Section A — hands-on exercise</h2>
+<p>Let’s design a Phase 3 Oncology trial</p>
+<aside class="notes">
+<p>FLAG: this section needs Eric’s direct input and review. Do not draft a scenario — the Q&amp;A flow, the specific numbers, and the “what good looks like” checkpoints should be Eric’s. Once provided, expand into full step slides matching the what-we’ll-do / how-it-behaves / hands-on / debrief pattern used elsewhere in this deck.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-a-debrief" class="slide level2" data-number="2.10">
+<h2><span class="header-section-number">2.10</span> Section A — debrief</h2>
+<ul>
+<li>Are the questions asked by the skill helpful?</li>
+<li>Do the outputs include everything you need?</li>
+<li>Can you apply this skill to your workflow?</li>
+</ul>
+<aside class="notes">
+<p>Same disclaimer applies: a designed-and-verified draft is still a draft. The statistician owns the final design.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-b-adam-generation" class="title-slide slide level1 unnumbered center">
+<h1>Section B — ADaM generation</h1>
+
+</section>
+<section id="section-b-what-well-do" class="slide level2" data-number="2.11">
+<h2><span class="header-section-number">2.11</span> Section B — what we’ll do</h2>
 <p>Drive the <strong>admiral</strong> skill family to derive ADaM datasets from SDTM:</p>
 <table class="caption-top">
 <thead>
@@ -753,7 +840,7 @@ Eric Zhang, PhD
 <aside class="notes">
 <p>Source data is the pharmaverse public CDISC test data (<code>pharmaversesdtm</code> / <code>pharmaverseadam</code>) — no proprietary data, safe to run live.</p>
 <p>The agent reads <code>skills/admiral/SKILL.md</code> (shared conventions) first, then the child skill for the dataset in question.</p>
-<p>[CONFIRM WITH JEFF: time budget for Section A within the 3-hour block.]</p>
+<p>[CONFIRM WITH JEFF: time budget for Section B within the 3-hour block.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -766,8 +853,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Section A — how the skill behaves</h2>
+<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.12">
+<h2><span class="header-section-number">2.12</span> Section B — how the skill behaves</h2>
 <p>When you ask for a derivation, the skilled agent will:</p>
 <ul>
 <li>Generate code <strong>section by section</strong>, not one giant block</li>
@@ -791,8 +878,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.9">
-<h2><span class="header-section-number">2.9</span> Section A — hands-on exercise</h2>
+<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.13">
+<h2><span class="header-section-number">2.13</span> Section B — hands-on exercise</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -828,8 +915,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-debrief" class="slide level2" data-number="2.10">
-<h2><span class="header-section-number">2.10</span> Section A — debrief</h2>
+<section id="section-b-debrief" class="slide level2" data-number="2.14">
+<h2><span class="header-section-number">2.14</span> Section B — debrief</h2>
 <ul>
 <li>Where did the agent place <code># REVIEW:</code> markers, and were they the right places?</li>
 <li>What did <em>you</em> have to decide that the skill correctly refused to guess?</li>
@@ -837,119 +924,6 @@ Eric Zhang, PhD
 </ul>
 <aside class="notes">
 <p>Reinforce the disclaimer: the output is a drafting aid. Independent QC against your own process is still required before any regulated use.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="section-b-group-sequential-design" class="title-slide slide level1 unnumbered center">
-<h1>Section B — Group sequential design</h1>
-
-</section>
-<section id="section-b-what-well-do" class="slide level2" data-number="2.11">
-<h2><span class="header-section-number">2.11</span> Section B — what we’ll do</h2>
-<p>Drive the <strong>group-sequential-design</strong> skill to design a survival trial:</p>
-<ul>
-<li>Survival endpoints (OS / PFS / DFS), interim + final analyses</li>
-<li>Alpha-spending boundaries (Lan-DeMets, Hwang-Shih-DeCani)</li>
-<li>Sample-size / event targets (N-first approach)</li>
-<li>Graphical multiplicity for co-primary / multi-population designs</li>
-<li><strong><code>lrstat</code> simulation</strong> to verify the analytic design</li>
-<li>A template-driven <strong>Word report</strong> (<code>gsd_report.py</code>)</li>
-</ul>
-<aside class="notes">
-<p>Scope note the skill enforces: standard group sequential designs only. Adaptive enrichment, sample-size re-estimation, seamless dose-selection, platform trials, and non-survival primary endpoints are explicitly out of scope — the skill will say so and stop.</p>
-<p>Tools: gsDesign, gsDesign2, lrstat, graphicalMCP, jsonlite (R) + python-docx.</p>
-<p>[CONFIRM WITH ERIC: time budget for Section B within the 3-hour block.]</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.12">
-<h2><span class="header-section-number">2.12</span> Section B — how the skill behaves</h2>
-<ul>
-<li>Asks design questions <strong>one at a time</strong>, in plain language, no defaults offered</li>
-<li>Summarises all inputs in a table and waits for your confirmation</li>
-<li>Computes the design, then <strong>checks interim-analysis timing</strong> against enrollment and minimum-gap constraints</li>
-<li><strong>Verifies by simulation</strong> before delivering — power within ±2 pp, type I error within ±0.5 pp</li>
-<li>Writes every number to <code>gsd_results.json</code>; the report reads from there (no hardcoded values)</li>
-</ul>
-<aside class="notes">
-<p>The one-artifact-per-turn pacing in the skill means the agent writes a script, stops, runs it, stops, etc. That is intentional — it keeps each step reviewable.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.13">
-<h2><span class="header-section-number">2.13</span> Section B — hands-on exercise</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Exercise content pending — to be supplied and reviewed by Eric</p>
-</div>
-</div>
-</div>
-<p>Needs to be specified before this deck is final:</p>
-<ul>
-<li>The trial scenario (disease, line of therapy, endpoint(s), HR, medians)</li>
-<li>Single vs.&nbsp;co-primary; single vs.&nbsp;multi-population</li>
-<li>Which design decisions attendees make vs.&nbsp;which are pre-set</li>
-<li>Expected outputs to inspect (<code>gsd_results.json</code>, multiplicity diagram, <code>gsd_report.docx</code>)</li>
-<li>Stretch goal (e.g.&nbsp;an NPH sensitivity evaluation)</li>
-</ul>
-<aside class="notes">
-<p>FLAG: this section needs Eric’s direct input and review. Do not draft a scenario — the Q&amp;A flow, the specific numbers, and the “what good looks like” checkpoints should be Eric’s. Once provided, expand into step slides mirroring Section A’s structure.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-b-debrief" class="slide level2" data-number="2.14">
-<h2><span class="header-section-number">2.14</span> Section B — debrief</h2>
-<ul>
-<li>Which constraint was binding — event target, minimum follow-up, or minimum gap?</li>
-<li>Did the simulation confirm the analytic design on the first try?</li>
-<li>What would you change about the design, and what lever would you pull?</li>
-</ul>
-<aside class="notes">
-<p>Same disclaimer applies: a designed-and-verified draft is still a draft. The statistician owns the final design.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1061,8 +1035,8 @@ Eric Zhang, PhD
 <section id="what-you-did-today" class="slide level2" data-number="3.1">
 <h2><span class="header-section-number">3.1</span> What you did today</h2>
 <ul>
-<li>Ran the <strong>admiral</strong> skills to derive ADaM datasets from SDTM</li>
 <li>Ran the <strong>group-sequential-design</strong> skill to design and verify a survival trial</li>
+<li>Ran the <strong>admiral</strong> skills to derive ADaM datasets from SDTM</li>
 <li>Read a skill’s internals, <strong>modified</strong> one, and <strong>sketched</strong> your own</li>
 </ul>
 <p>All driven by describing the task in natural language — the skill supplied the discipline.</p>
