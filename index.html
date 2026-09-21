@@ -658,9 +658,11 @@ Eric Zhang, PhD
 <li>The GSD set (<code>gsDesign</code>, <code>gsDesign2</code>, <code>lrstat</code>, <code>graphicalMCP</code>, <code>jsonlite</code>)</li>
 <li>Python ≥ 3.8 with <code>python-docx</code></li>
 </ul>
-<p>In the preconfigured environment every line should be <strong><code>[ OK ]</code></strong>.</p>
+<p>In the preconfigured environment every line should be <strong><code>[ OK ]</code></strong>. Any <code>[FAIL]</code> prints the exact fix — usually:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>Rscript install_packages.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p><code>check_setup.R</code> is base-R only and installs nothing — it just reports. It exists as a fast confidence check that your session is intact. If anything is <code>[FAIL]</code> in the workshop environment, flag it in chat — that’s an environment issue, not something you fix.</p>
+<p><code>check_setup.R</code> is base-R only and installs nothing — it just reports and tells you what to run. <code>install_packages.R</code> only installs what’s missing or outdated, so it’s safe to let attendees try the printed fix once, even in a preconfigured environment with an unexpected gap.</p>
+<p>If it doesn’t clear in a minute or two, or the failure is Python or R itself (<code>install_packages.R</code> can’t fix either — <code>check_setup.R</code> says so explicitly), stop there: flag it in chat rather than troubleshooting solo. That’s an environment issue for us to fix live, not something to debug on your own time.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -968,12 +970,12 @@ Eric Zhang, PhD
 <section id="anatomy-of-a-skill" class="slide level2" data-number="2.15">
 <h2><span class="header-section-number">2.15</span> Anatomy of a skill</h2>
 <p>Everything the agent needs is plain text and scripts in one folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>skills/admiral/admiral-adsl/</span>
-<span id="cb3-2"><a href=""></a>├── SKILL.md                     # frontmatter + step-by-step workflow</span>
-<span id="cb3-3"><a href=""></a>├── references/</span>
-<span id="cb3-4"><a href=""></a>│   ├── admiral-functions.md     # function selection, pitfalls</span>
-<span id="cb3-5"><a href=""></a>│   └── adsl-conventions.md      # CDISC variable conventions</span>
-<span id="cb3-6"><a href=""></a>└── LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>skills/admiral/admiral-adsl/</span>
+<span id="cb4-2"><a href=""></a>├── SKILL.md                     # frontmatter + step-by-step workflow</span>
+<span id="cb4-3"><a href=""></a>├── references/</span>
+<span id="cb4-4"><a href=""></a>│   ├── admiral-functions.md     # function selection, pitfalls</span>
+<span id="cb4-5"><a href=""></a>│   └── adsl-conventions.md      # CDISC variable conventions</span>
+<span id="cb4-6"><a href=""></a>└── LICENSE</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><strong>Frontmatter</strong> (<code>name</code>, <code>description</code>) is how the agent decides when to load the skill</li>
 <li><strong>Workflow</strong> is ordered steps with code patterns and <code># REVIEW:</code> rules</li>
@@ -1089,7 +1091,7 @@ Eric Zhang, PhD
 <li><strong>Submissions Working Group:</strong> <a href="https://rconsortium.github.io/submissions-wg/" class="uri">https://rconsortium.github.io/submissions-wg/</a></li>
 </ul>
 <p>Install into your own project:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">npx</span> skills add RConsortium/pharma-skills <span class="at">--skill</span> admiral-adsl <span class="at">--skill</span> group-sequential-design</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">npx</span> skills add RConsortium/pharma-skills <span class="at">--skill</span> admiral-adsl <span class="at">--skill</span> group-sequential-design</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
 <p>Also mention Option A from the repo README — open the repo as your project and let its CLAUDE.md route the agent to each skill; set your local Rscript path for the GSD skill.</p>
 <style type="text/css">
