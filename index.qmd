@@ -509,22 +509,72 @@ not guess these.
 
 ## Section B — hands-on exercise
 
-::: {.callout-important}
-Exercise content pending — to be supplied by Jeff
-:::
+**Step 1 — everyone: derive ADSL**
 
-Needs to be specified before this deck is final:
+Prompt to give the agent (verbatim, in chat — not typed as code):
 
-- Exact prompt(s) attendees give the agent
-- Which SDTM domains / dataset (pharmaversesdtm `dm`/`ex`/`ds`/`ae`/`vs`/`lb`?)
-- Step sequence: ADSL first, then ADAE and/or BDS?
-- What "done" looks like — which variables / checks to verify
-- Stretch goal for fast finishers
+> "Using the admiral-adsl skill, derive ADSL from the pharmaversesdtm DM, EX,
+> and DS domains. Include TRT01P/TRT01A, treatment start/end dates, and the
+> SAFFL population flag."
+
+Watch for: the skill should ask you to confirm the treatment variable mapping
+and the SAFFL definition before it writes any code — if it doesn't ask,
+that's worth flagging in debrief.
+
+**Step 2 — pick a track**
+
+- **Track 1 — ADAE:** "Using the admiral-adae skill and the ADSL you just
+  built, derive ADAE from the pharmaversesdtm AE domain. Include the TEAE
+  flag and AE start/end study day."
+- **Track 2 — BDS (ADVS):** "Using the admiral-bds skill and the ADSL you
+  just built, derive ADVS from the pharmaversesdtm VS domain. Include
+  baseline flag and change-from-baseline for each parameter."
+
+Both tracks depend on the ADSL from Step 1 — point people to their own
+output, not a shared copy, so the exercise mirrors a real pipeline.
 
 ::: {.notes}
-DO NOT invent exercise steps. Jeff to provide the exact walkthrough — prompts,
-expected agent behaviour, review checkpoints, and the QC the attendee runs at
-the end. Once provided, expand this into the needed number of step slides.
+People self-select a track based on which is closer to their own work —
+programmers who touch safety data lean ADAE, anyone doing efficacy/labs leans
+BDS. No wrong choice; the debrief afterward works for either.
+:::
+
+## Section B — what "done" looks like
+
+- **ADSL:** one row per USUBJID; TRT01P/TRT01A populated for all subjects;
+  SAFFL is `"Y"`/`NA`, never `"N"`; `stopifnot()` guard for row uniqueness
+  passes
+- **ADAE (Track 1):** TEAE flag correctly excludes pre-treatment AEs; AE
+  start day computed relative to treatment start, not enrollment; at least
+  one `# REVIEW:` comment on the TEAE window definition
+- **ADVS (Track 2):** baseline flag set to the last non-missing value
+  on/before treatment start per parameter; change-from-baseline present for
+  post-baseline records only
+
+If your output is missing a `# REVIEW:` comment somewhere you'd expect one
+(TEAE window, baseline definition, population flag edge case), that's the
+thing to raise in debrief — not a bug to fix silently.
+
+::: {.notes}
+Use this slide as a self-check people can glance at while working, not
+something to read through line by line. Circulate and use it as your own
+checklist when helping someone who's stuck.
+:::
+
+## Section B — stretch goal
+
+Finished early? Two options:
+
+- Run the *other* track (ADAE if you did BDS, or vice versa)
+- Open `skills/admiral/admiral-adae/SKILL.md` (or
+  `skills/admiral/admiral-bds/SKILL.md`) and find the section defining the
+  TEAE window / baseline rule — see whether the agent's `# REVIEW:`
+  placement matches what the skill actually says to flag
+
+::: {.notes}
+The second option is the more interesting one for people who want to see
+behind the curtain — it's the first time in the workshop they read the skill
+file itself rather than just its output.
 :::
 
 ## Section B — debrief
