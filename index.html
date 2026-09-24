@@ -880,29 +880,20 @@ Eric Zhang, PhD
 </section>
 <section id="section-b-hands-on-exercise" class="slide level2" data-number="2.13">
 <h2><span class="header-section-number">2.13</span> Section B — hands-on exercise</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>Exercise content pending — to be supplied by Jeff</p>
-</div>
-</div>
-</div>
-<p>Needs to be specified before this deck is final:</p>
+<p><strong>Step 1 — everyone: derive ADSL</strong></p>
+<p>Prompt to give the agent (verbatim, in chat — not typed as code):</p>
+<blockquote>
+<p>“Using the admiral-adsl skill, derive ADSL from the pharmaversesdtm DM, EX, and DS domains. Include TRT01P/TRT01A, treatment start/end dates, and the SAFFL population flag.”</p>
+</blockquote>
+<p>Watch for: the skill should ask you to confirm the treatment variable mapping and the SAFFL definition before it writes any code — if it doesn’t ask, that’s worth flagging in debrief.</p>
+<p><strong>Step 2 — pick a track</strong></p>
 <ul>
-<li>Exact prompt(s) attendees give the agent</li>
-<li>Which SDTM domains / dataset (pharmaversesdtm <code>dm</code>/<code>ex</code>/<code>ds</code>/<code>ae</code>/<code>vs</code>/<code>lb</code>?)</li>
-<li>Step sequence: ADSL first, then ADAE and/or BDS?</li>
-<li>What “done” looks like — which variables / checks to verify</li>
-<li>Stretch goal for fast finishers</li>
+<li><strong>Track 1 — ADAE:</strong> “Using the admiral-adae skill and the ADSL you just built, derive ADAE from the pharmaversesdtm AE domain. Include the TEAE flag and AE start/end study day.”</li>
+<li><strong>Track 2 — BDS (ADVS):</strong> “Using the admiral-bds skill and the ADSL you just built, derive ADVS from the pharmaversesdtm VS domain. Include baseline flag and change-from-baseline for each parameter.”</li>
 </ul>
+<p>Both tracks depend on the ADSL from Step 1 — point people to their own output, not a shared copy, so the exercise mirrors a real pipeline.</p>
 <aside class="notes">
-<p>DO NOT invent exercise steps. Jeff to provide the exact walkthrough — prompts, expected agent behaviour, review checkpoints, and the QC the attendee runs at the end. Once provided, expand this into the needed number of step slides.</p>
+<p>People self-select a track based on which is closer to their own work — programmers who touch safety data lean ADAE, anyone doing efficacy/labs leans BDS. No wrong choice; the debrief afterward works for either.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -915,8 +906,51 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-debrief" class="slide level2" data-number="2.14">
-<h2><span class="header-section-number">2.14</span> Section B — debrief</h2>
+<section id="section-b-what-done-looks-like" class="slide level2" data-number="2.14">
+<h2><span class="header-section-number">2.14</span> Section B — what “done” looks like</h2>
+<ul>
+<li><strong>ADSL:</strong> one row per USUBJID; TRT01P/TRT01A populated for all subjects; SAFFL is <code>"Y"</code>/<code>NA</code>, never <code>"N"</code>; <code>stopifnot()</code> guard for row uniqueness passes</li>
+<li><strong>ADAE (Track 1):</strong> TEAE flag correctly excludes pre-treatment AEs; AE start day computed relative to treatment start, not enrollment; at least one <code># REVIEW:</code> comment on the TEAE window definition</li>
+<li><strong>ADVS (Track 2):</strong> baseline flag set to the last non-missing value on/before treatment start per parameter; change-from-baseline present for post-baseline records only</li>
+</ul>
+<p>If your output is missing a <code># REVIEW:</code> comment somewhere you’d expect one (TEAE window, baseline definition, population flag edge case), that’s the thing to raise in debrief — not a bug to fix silently.</p>
+<aside class="notes">
+<p>Use this slide as a self-check people can glance at while working, not something to read through line by line. Circulate and use it as your own checklist when helping someone who’s stuck.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-b-stretch-goal" class="slide level2" data-number="2.15">
+<h2><span class="header-section-number">2.15</span> Section B — stretch goal</h2>
+<p>Finished early? Two options:</p>
+<ul>
+<li>Run the <em>other</em> track (ADAE if you did BDS, or vice versa)</li>
+<li>Open <code>skills/admiral/admiral-adae/SKILL.md</code> (or <code>skills/admiral/admiral-bds/SKILL.md</code>) and find the section defining the TEAE window / baseline rule — see whether the agent’s <code># REVIEW:</code> placement matches what the skill actually says to flag</li>
+</ul>
+<aside class="notes">
+<p>The second option is the more interesting one for people who want to see behind the curtain — it’s the first time in the workshop they read the skill file itself rather than just its output.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-b-debrief" class="slide level2" data-number="2.16">
+<h2><span class="header-section-number">2.16</span> Section B — debrief</h2>
 <ul>
 <li>Where did the agent place <code># REVIEW:</code> markers, and were they the right places?</li>
 <li>What did <em>you</em> have to decide that the skill correctly refused to guess?</li>
@@ -941,8 +975,8 @@ Eric Zhang, PhD
 <h1>Section C — Practice with group-sequential-design and admiral</h1>
 
 </section>
-<section id="now-its-your-turn" class="slide level2" data-number="2.15">
-<h2><span class="header-section-number">2.15</span> Now it’s your turn</h2>
+<section id="now-its-your-turn" class="slide level2" data-number="2.17">
+<h2><span class="header-section-number">2.17</span> Now it’s your turn</h2>
 <p>Try one of today’s skills on something from your own work:</p>
 <ul>
 <li><strong>group-sequential-design</strong> — describe a trial you’re actually designing</li>
