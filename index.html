@@ -311,7 +311,7 @@ Eric Zhang, PhD
 </ol>
 <p>Three hours, one break near the midpoint.</p>
 <aside class="notes">
-<p>[CONFIRM WITH JEFF/ERIC: split of the 3-hour block.] Proposed, to confirm:</p>
+<p>[Note: split of the 3-hour block.] Proposed, to confirm:</p>
 <ul>
 <li>8:00–8:25 Welcome + skills overview</li>
 <li>8:25–8:40 Environment orientation</li>
@@ -429,9 +429,9 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="skills-vs.-no-skills-adam-benchmarks" class="slide level2" data-number="1.4">
+<section id="skills-vs.-no-skills-adam-benchmarks" class="slide level2 smaller" data-number="1.4">
 <h2><span class="header-section-number">1.4</span> Skills vs.&nbsp;no skills — ADaM benchmarks</h2>
-<p>Community A/B benchmarks in <code>pharma-skills</code> — the <strong>same task</strong>, an agent <strong>with</strong> vs <strong>without</strong> the skill, scored against a methodology rubric:</p>
+<p>Community A/B benchmarks — <strong>same task</strong>, agent <strong>with</strong> vs <strong>without</strong> the skill, scored against a methodology rubric:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -471,7 +471,7 @@ Eric Zhang, PhD
 <p>The gap is mostly <strong>admiral-idiom compliance + QC annotations</strong>, not whether the numbers come out right.</p>
 <aside class="notes">
 <p>Source: <code>benchmark-runner</code> results posted as comments on the <code>[benchmark]</code> issues in RConsortium/pharma-skills — #137, #147, #148, #149, #126, #165. Single runs, <code>claude-sonnet-4-6</code>, <code>pharmaversesdtm</code> → <code>pharmaverseadam</code> data, May–Jul 2026; skill versions vary by run.</p>
-<p>[CONFIRM WITH JEFF: confirm these are the runs/numbers you want on-slide, and whether to cite a specific skill SHA / date.]</p>
+<p>[Note: confirm these are the runs/numbers you want on-slide, and whether to cite a specific skill SHA / date.]</p>
 <p>What the gap actually is: both agents usually compute the <em>right values</em>. The skill-guided agent uses admiral functions, places <code># REVIEW:</code> comments at every protocol-specific decision, and adds <code>stopifnot()</code> QC guards; the unaided agent uses base dplyr/lubridate, no review markers, and sometimes leaves DOMAIN in or keeps SDTM <code>"Y"/"N"</code> flags — code that would draw immediate QC findings.</p>
 <p>Honest caveats to say out loud:</p>
 <ul>
@@ -586,7 +586,7 @@ Eric Zhang, PhD
 </ul>
 <aside class="notes">
 <p>Walk the room through it live in the webinar; confirm everyone is in via chat before moving on. If GitHub sign-in fails, try the OpenID option.</p>
-<p>[CONFIRM WITH JEFF: is there a per-attendee access code / invite, or is it self-service GitHub/OpenID only? Confirm the exact wording of the sign-in options shown on workshop.posit.team.]</p>
+<p>[Note: is there a per-attendee access code / invite, or is it self-service GitHub/OpenID only? Confirm the exact wording of the sign-in options shown on workshop.posit.team.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -608,7 +608,7 @@ Eric Zhang, PhD
 <li>Optional stretch: open a PR back to the source <strong>pharma-skills</strong> project</li>
 </ul>
 <aside class="notes">
-<p>[CONFIRM WITH JEFF: is this step actually needed, or does the preconfigured environment already persist each attendee’s work some other way (e.g.&nbsp;a per-user workspace that survives session end)? If it does, cut this slide — don’t add GitHub mechanics to a 3-hour session unless they buy something.</p>
+<p>[Note: is this step actually needed, or does the preconfigured environment already persist each attendee’s work some other way (e.g.&nbsp;a per-user workspace that survives session end)? If it does, cut this slide — don’t add GitHub mechanics to a 3-hour session unless they buy something.</p>
 <p>If we keep it: fork on github.com takes a few clicks and can happen before or while Positron is loading. The next step then clones <em>the attendee’s fork</em>, not the upstream repo, so <code>git push</code> works without a permissions prompt.</p>
 <p>Worth flagging in chat at the top of orientation: anyone who signed in via OpenID (not GitHub) will need a free GitHub account for this step specifically — point them to github.com/signup before you start walking through the fork.]</p>
 <style type="text/css">
@@ -629,7 +629,7 @@ Eric Zhang, PhD
 <p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A’s report generator is Python (<code>python-docx</code>), Section B is R (admiral), and Section C touches both. One session covers everything.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/rpharma-2026-workshop.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <aside class="notes">
-<p>[CONFIRM WITH JEFF: does each attendee land in a pre-cloned copy already, or clone their own fork as shown here? If pre-cloned, add a step to point the <code>origin</code> remote at their fork (or add it as a second remote) so Section C work can still be pushed somewhere persistent: <code>git remote set-url origin https://github.com/&lt;your-username&gt;/rpharma-2026-workshop.git</code>]</p>
+<p>[Note: does each attendee land in a pre-cloned copy already, or clone their own fork as shown here? If pre-cloned, add a step to point the <code>origin</code> remote at their fork (or add it as a second remote) so Section C work can still be pushed somewhere persistent: <code>git remote set-url origin https://github.com/&lt;your-username&gt;/rpharma-2026-workshop.git</code>]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -690,7 +690,7 @@ Eric Zhang, PhD
 <li>An R console and a Python console both available</li>
 </ul>
 <aside class="notes">
-<p>[CONFIRM WITH JEFF: replace with an actual screenshot of the ready state, or a precise description. Consider sharing a reference screenshot in chat so people can self-check without unmuting.]</p>
+<p>[Note: replace with an actual screenshot of the ready state, or a precise description. Consider sharing a reference screenshot in chat so people can self-check without unmuting.]</p>
 <p>Do not start Section A until everyone confirms this in chat.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -723,7 +723,7 @@ Eric Zhang, PhD
 <aside class="notes">
 <p>Scope note the skill enforces: standard group sequential designs only. Adaptive enrichment, sample-size re-estimation, seamless dose-selection, platform trials, and non-survival primary endpoints are explicitly out of scope — the skill will say so and stop.</p>
 <p>Tools: gsDesign, gsDesign2, lrstat, graphicalMCP, jsonlite (R) + python-docx.</p>
-<p>[CONFIRM WITH ERIC: time budget for Section A within the 3-hour block.]</p>
+<p>[Note: time budget for Section A within the 3-hour block.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -802,7 +802,7 @@ Eric Zhang, PhD
 <h1>Section B — ADaM generation</h1>
 
 </section>
-<section id="section-b-what-well-do" class="slide level2" data-number="2.11">
+<section id="section-b-what-well-do" class="slide level2 smaller" data-number="2.11">
 <h2><span class="header-section-number">2.11</span> Section B — what we’ll do</h2>
 <p>Drive the <strong>admiral</strong> skill family to derive ADaM datasets from SDTM:</p>
 <table class="caption-top">
@@ -840,7 +840,7 @@ Eric Zhang, PhD
 <aside class="notes">
 <p>Source data is the pharmaverse public CDISC test data (<code>pharmaversesdtm</code> / <code>pharmaverseadam</code>) — no proprietary data, safe to run live.</p>
 <p>The agent reads <code>skills/admiral/SKILL.md</code> (shared conventions) first, then the child skill for the dataset in question.</p>
-<p>[CONFIRM WITH JEFF: time budget for Section B within the 3-hour block.]</p>
+<p>[Note: time budget for Section B within the 3-hour block.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -985,7 +985,7 @@ Eric Zhang, PhD
 <p>Just describe the task in plain language and see what the agent produces. Commit anything you want to keep to <strong>your fork</strong>. We’re here to help if you get stuck.</p>
 <aside class="notes">
 <p>Instructor-supported open practice time — no fixed script. Circulate and help people get unstuck rather than walking through a set scenario. Afterward, ask a couple of people to share what they tried and what stood out, then move to wrap-up.</p>
-<p>[CONFIRM WITH JEFF: if the “fork the repo” step (Environment orientation, #2) is cut, swap “commit anything you want to keep to your fork” for however work actually persists — e.g.&nbsp;“download what you want to keep” or “it stays in your Workbench home directory.”]</p>
+<p>[Note: if the “fork the repo” step (Environment orientation, #2) is cut, swap “commit anything you want to keep to your fork” for however work actually persists — e.g.&nbsp;“download what you want to keep” or “it stays in your Workbench home directory.”]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1073,8 +1073,12 @@ Eric Zhang, PhD
 </section>
 <section id="thank-you" class="slide level2" data-number="3.4">
 <h2><span class="header-section-number">3.4</span> Thank you</h2>
-<p><strong>Jeff Dickinson, PhD</strong> Associate Director, Clinical Reporting · Navitas Data Sciences [CONFIRM WITH JEFF: contact — email / GitHub / LinkedIn]</p>
-<p><strong>Eric Zhang, PhD</strong> Senior Director, Biostatistics · Eikon Therapeutics [CONFIRM WITH ERIC: contact — email / GitHub / LinkedIn]</p>
+<p><strong>Jeff Dickinson, PhD</strong><br>
+Associate Director, Clinical Reporting · Navitas Data Sciences<br>
+<a href="mailto:jeff.dickinson@navitaslifesciences.com" class="email">jeff.dickinson@navitaslifesciences.com</a> · <a href="https://github.com/jeffreyad">github.com/jeffreyad</a></p>
+<p><strong>Eric Zhang, PhD</strong><br>
+Senior Director, Biostatistics · Eikon Therapeutics<br>
+<a href="mailto:zhangp@eikontx.com" class="email">zhangp@eikontx.com</a> · <a href="https://github.com/eric-zhang16">github.com/eric-zhang16</a></p>
 <p>Questions?</p>
 <aside class="notes">
 <p>Leave this up during Q&amp;A. Post the repo URL and the pharma-skills URL in chat as a pinned message for people photographing / screenshotting slides.</p>
