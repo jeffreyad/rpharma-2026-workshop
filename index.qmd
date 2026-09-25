@@ -681,11 +681,11 @@ slide for a pharma audience.
 
 **Jeff Dickinson, PhD**\
 Associate Director, Clinical Reporting · Navitas Data Sciences\
-<jeff.dickinson@navitaslifesciences.com>
+<jeff.dickinson@navitaslifesciences.com> · [github.com/jeffreyad](https://github.com/jeffreyad)
 
 **Eric Zhang, PhD**\
 Senior Director, Biostatistics · Eikon Therapeutics\
-<zhangp@eikontx.com>
+<zhangp@eikontx.com> · [github.com/eric-zhang16](https://github.com/eric-zhang16)
 
 Questions?
 
