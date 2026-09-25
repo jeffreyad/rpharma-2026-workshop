@@ -465,7 +465,7 @@ statistician owns the final design.
 
 # Section B — ADaM generation {.unnumbered}
 
-## Section B — what we'll do
+## Section B — what we'll do {.smaller}
 
 Drive the **admiral** skill family to derive ADaM datasets from SDTM:
 
