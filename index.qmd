@@ -168,10 +168,10 @@ mandatory simulation-verification step.
 [EZ]: Updated the model run results
 :::
 
-## Skills vs. no skills — ADaM benchmarks
+## Skills vs. no skills — ADaM benchmarks {.smaller}
 
-Community A/B benchmarks in `pharma-skills` — the **same task**, an agent
-**with** vs **without** the skill, scored against a methodology rubric:
+Community A/B benchmarks — **same task**, agent **with** vs **without** the
+skill, scored against a methodology rubric:
 
 | Skill / task | With skill | Without skill |
 |---|---|---|
