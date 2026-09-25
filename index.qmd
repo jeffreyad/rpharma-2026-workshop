@@ -92,7 +92,7 @@ environment is preconfigured so no one loses time on setup.
 Three hours, one break near the midpoint.
 
 ::: {.notes}
-[CONFIRM WITH JEFF/ERIC: split of the 3-hour block.] Proposed, to confirm:
+[Note: split of the 3-hour block.] Proposed, to confirm:
 
 - 8:00–8:25  Welcome + skills overview
 - 8:25–8:40  Environment orientation
@@ -190,7 +190,7 @@ issues in RConsortium/pharma-skills — #137, #147, #148, #149, #126, #165.
 Single runs, `claude-sonnet-4-6`, `pharmaversesdtm` → `pharmaverseadam` data,
 May–Jul 2026; skill versions vary by run.
 
-[CONFIRM WITH JEFF: confirm these are the runs/numbers you want on-slide, and
+[Note: confirm these are the runs/numbers you want on-slide, and
 whether to cite a specific skill SHA / date.]
 
 What the gap actually is: both agents usually compute the *right values*. The
@@ -291,7 +291,7 @@ Go to **<https://workshop.posit.team/>** and sign in.
 Walk the room through it live in the webinar; confirm everyone is in via chat
 before moving on. If GitHub sign-in fails, try the OpenID option.
 
-[CONFIRM WITH JEFF: is there a per-attendee access code / invite, or is it
+[Note: is there a per-attendee access code / invite, or is it
 self-service GitHub/OpenID only? Confirm the exact wording of the sign-in
 options shown on workshop.posit.team.]
 :::
@@ -309,7 +309,7 @@ On GitHub, fork **jeffreyad/rpharma-2026-workshop** to your own account.
 - Optional stretch: open a PR back to the source **pharma-skills** project
 
 ::: {.notes}
-[CONFIRM WITH JEFF: is this step actually needed, or does the preconfigured
+[Note: is this step actually needed, or does the preconfigured
 environment already persist each attendee's work some other way (e.g. a
 per-user workspace that survives session end)? If it does, cut this slide —
 don't add GitHub mechanics to a 3-hour session unless they buy something.
@@ -336,7 +336,7 @@ git clone https://github.com/<your-username>/rpharma-2026-workshop.git
 ```
 
 ::: {.notes}
-[CONFIRM WITH JEFF: does each attendee land in a pre-cloned copy already, or
+[Note: does each attendee land in a pre-cloned copy already, or
 clone their own fork as shown here? If pre-cloned, add a step to point the
 `origin` remote at their fork (or add it as a second remote) so Section C work
 can still be pushed somewhere persistent:
@@ -389,7 +389,7 @@ Ready-state checklist
 - An R console and a Python console both available
 
 ::: {.notes}
-[CONFIRM WITH JEFF: replace with an actual screenshot of the ready state, or a
+[Note: replace with an actual screenshot of the ready state, or a
 precise description. Consider sharing a reference screenshot in chat so people
 can self-check without unmuting.]
 
@@ -417,7 +417,7 @@ say so and stop.
 
 Tools: gsDesign, gsDesign2, lrstat, graphicalMCP, jsonlite (R) + python-docx.
 
-[CONFIRM WITH ERIC: time budget for Section A within the 3-hour block.]
+[Note: time budget for Section A within the 3-hour block.]
 :::
 
 ## Section A — how the skill behaves
@@ -486,7 +486,7 @@ Source data is the pharmaverse public CDISC test data (`pharmaversesdtm` /
 The agent reads `skills/admiral/SKILL.md` (shared conventions) first, then the
 child skill for the dataset in question.
 
-[CONFIRM WITH JEFF: time budget for Section B within the 3-hour block.]
+[Note: time budget for Section B within the 3-hour block.]
 :::
 
 ## Section B — how the skill behaves
@@ -608,7 +608,7 @@ people get unstuck rather than walking through a set scenario. Afterward, ask
 a couple of people to share what they tried and what stood out, then move to
 wrap-up.
 
-[CONFIRM WITH JEFF: if the "fork the repo" step (Environment orientation, #2)
+[Note: if the "fork the repo" step (Environment orientation, #2)
 is cut, swap "commit anything you want to keep to your fork" for however work
 actually persists — e.g. "download what you want to keep" or "it stays in
 your Workbench home directory."]
@@ -681,11 +681,11 @@ slide for a pharma audience.
 
 **Jeff Dickinson, PhD**
 Associate Director, Clinical Reporting · Navitas Data Sciences
-[CONFIRM WITH JEFF: contact — email / GitHub / LinkedIn]
+[Note: contact — email / GitHub / LinkedIn]
 
 **Eric Zhang, PhD**
 Senior Director, Biostatistics · Eikon Therapeutics
-[CONFIRM WITH ERIC: contact — email / GitHub / LinkedIn]
+[Note: contact — email / GitHub / LinkedIn]
 
 Questions?
 
