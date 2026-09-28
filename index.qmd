@@ -521,6 +521,8 @@ Watch for: the skill should ask you to confirm the treatment variable mapping
 and the SAFFL definition before it writes any code — if it doesn't ask,
 that's worth flagging in debrief.
 
+## Section B — hands-on exercise (continued)
+
 **Step 2 — pick a track**
 
 - **Track 1 — ADAE:** "Using the admiral-adae skill and the ADSL you just
