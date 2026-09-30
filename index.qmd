@@ -42,7 +42,7 @@ Three-hour block, 8:00–11:00 CDT. One break around the midpoint.
 
 Opening framing: by the end you will have run two production-style
 clinical workflows end to end by describing the task to an AI agent in plain
-language — and you will have modified a skill and sketched one of your own.
+language — and you will have tried the skills on a problem from your own work.
 :::
 
 ## What you'll do
@@ -58,7 +58,7 @@ language — and you will have modified a skill and sketched one of your own.
 ::: {.notes}
 This mirrors the official session description. Emphasise the last two bullets —
 this workshop is not just "watch the agent work," it's "learn to build the
-thing that makes the agent reliable."
+thing that makes the agent reliable, and how to apply it to your own work."
 
 Repeat throughout: these skills produce *drafting aids, not validated
 deliverables*. Independent QC still required before any regulated use.
@@ -76,7 +76,7 @@ sequential design thread, or both.
 
 ::: {.notes}
 Set expectations: statisticians may go deep on Section A, programmers on
-Section B, and everyone converges for the skill-authoring section. The
+Section B, and everyone converges for open practice in Section C. The
 environment is preconfigured so no one loses time on setup.
 :::
 
@@ -99,7 +99,7 @@ Three hours, one break near the midpoint.
 - 8:40–9:35  Section A — group sequential design
 - 9:35–9:45  Break
 - 9:45–10:40 Section B — ADaM
-- 10:40–10:55 Section C — modify / build a skill
+- 10:40–10:55 Section C — practice with the skills
 - 10:55–11:00 Wrap-up
 :::
 
@@ -225,8 +225,8 @@ Every skill in this workshop repo is copied from pharma-skills without changes
 to its derivation logic. Credit: admiral skills — Jeff Dickinson (Navitas);
 group-sequential-design — Eric Zhang.
 
-Point people at LIFECYCLE.md if they want to contribute a skill — it connects
-to Section C.
+Point people at LIFECYCLE.md if they want to contribute a skill — a natural
+next step after Section C.
 :::
 
 ## Three threads today
@@ -251,8 +251,8 @@ Derive analysis datasets from SDTM with **{admiral}**:
 ::: {.column width="33%"}
 ### C &middot; practice with the skills
 
-- try skills with an example
-- Sketch your own
+- Try a skill on your own problem
+- Instructor support throughout
 :::
 :::
 
@@ -300,7 +300,7 @@ options shown on workshop.posit.team.]
 
 On GitHub, fork **jeffreyad/rpharma-2026-workshop** to your own account.
 
-- Section C has you modify and sketch a skill — forking gives you somewhere
+- Section C is open practice with the skills — forking gives you somewhere
   of your own to keep that work after the session ends
 - If you signed in above with GitHub, you already have an account — one extra
   click. **No GitHub account?** Sign up free at
@@ -623,7 +623,7 @@ your Workbench home directory."]
 - Ran the **group-sequential-design** skill to design and verify a survival
   trial
 - Ran the **admiral** skills to derive ADaM datasets from SDTM
-- Read a skill's internals, **modified** one, and **sketched** your own
+- Tried the skills on a problem from **your own work**
 
 All driven by describing the task in natural language — the skill supplied the
 discipline.
@@ -631,8 +631,8 @@ discipline.
 ::: {.notes}
 Land the through-line: the value is not "AI writes code fast." It is that a
 reviewed, version-controlled workflow runs consistently every time, with review
-markers exactly where human judgment is required — and that you can now build
-those workflows yourself.
+markers exactly where human judgment is required — and that you can now apply
+those workflows to your own work.
 :::
 
 ## Take it with you

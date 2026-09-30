@@ -63,9 +63,9 @@ if (utils::compareVersion(r_ver, "4.2.0") < 0) {
   record("OK", "R version", r_ver)
 }
 
-# -- admiral thread (Section A) -----------------------------------------------
+# -- admiral thread (Section B) -----------------------------------------------
 
-message("\n== admiral / ADaM packages (Section A) ==")
+message("\n== admiral / ADaM packages (Section B) ==")
 check_pkg("admiral", min_version = "1.2.0", group = "core")
 check_pkg("dplyr",             group = "core")
 check_pkg("lubridate",         group = "core")
@@ -74,16 +74,16 @@ check_pkg("pharmaverseadam",   group = "test data")
 check_pkg("metacore",          group = "submission output")
 check_pkg("xportr",            group = "submission output")
 
-# -- group sequential design thread (Section B) -----------------------------
+# -- group sequential design thread (Section A) -----------------------------
 
-message("\n== Group sequential design packages (Section B) ==")
+message("\n== Group sequential design packages (Section A) ==")
 check_pkg("gsDesign",     group = "boundaries")
 check_pkg("gsDesign2",    group = "boundaries")
 check_pkg("lrstat",       group = "verification")
 check_pkg("graphicalMCP", group = "multiplicity")
 check_pkg("jsonlite",     group = "results I/O")
 
-# -- Python + python-docx (Section B report) --------------------------------
+# -- Python + python-docx (Section A report) --------------------------------
 
 message("\n== Python (GSD Word report) ==")
 

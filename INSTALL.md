@@ -38,14 +38,14 @@ troubleshooting.
 ### 1. R packages
 
 ```r
-# admiral / ADaM thread (Section A)
+# admiral / ADaM thread (Section B)
 install.packages(c(
   "admiral", "dplyr", "lubridate",
   "pharmaversesdtm", "pharmaverseadam",
   "metacore", "xportr"
 ))
 
-# Group sequential design thread (Section B)
+# Group sequential design thread (Section A)
 install.packages(c(
   "gsDesign", "gsDesign2", "lrstat", "graphicalMCP", "jsonlite"
 ))

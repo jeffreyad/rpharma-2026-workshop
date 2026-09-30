@@ -21,7 +21,7 @@
 
 # name = minimum version ("" = any version)
 required <- c(
-  # admiral / ADaM thread (Section A)
+  # admiral / ADaM thread (Section B)
   admiral          = "1.2.0",
   dplyr            = "",
   lubridate        = "",
@@ -29,7 +29,7 @@ required <- c(
   pharmaverseadam  = "",
   metacore         = "",
   xportr           = "",
-  # group sequential design thread (Section B)
+  # group sequential design thread (Section A)
   gsDesign         = "",
   gsDesign2        = "",
   lrstat           = "",
