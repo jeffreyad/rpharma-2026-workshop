@@ -239,7 +239,7 @@ Eric Zhang, PhD
 <aside class="notes">
 <p>Virtual housekeeping to cover verbally: how to ask questions (chat vs. unmute), how help works during hands-on time (breakout rooms / screen share), and where the repo and environment links are posted (pin them in chat).</p>
 <p>Three-hour block, 8:00–11:00 CDT. One break around the midpoint.</p>
-<p>Opening framing: by the end you will have run two production-style clinical workflows end to end by describing the task to an AI agent in plain language — and you will have modified a skill and sketched one of your own.</p>
+<p>Opening framing: by the end you will have run two production-style clinical workflows end to end by describing the task to an AI agent in plain language — and you will have tried the skills on a problem from your own work.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -262,7 +262,7 @@ Eric Zhang, PhD
 </ul>
 <p><em>No prior AI-skills experience required.</em></p>
 <aside class="notes">
-<p>This mirrors the official session description. Emphasise the last two bullets — this workshop is not just “watch the agent work,” it’s “learn to build the thing that makes the agent reliable.”</p>
+<p>This mirrors the official session description. Emphasise the last two bullets — this workshop is not just “watch the agent work,” it’s “learn to build the thing that makes the agent reliable, and how to apply it to your own work.”</p>
 <p>Repeat throughout: these skills produce <em>drafting aids, not validated deliverables</em>. Independent QC still required before any regulated use.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -286,7 +286,7 @@ Eric Zhang, PhD
 </ul>
 <p>Pick the exercises closest to your work — the ADaM thread, the group sequential design thread, or both.</p>
 <aside class="notes">
-<p>Set expectations: statisticians may go deep on Section A, programmers on Section B, and everyone converges for the skill-authoring section. The environment is preconfigured so no one loses time on setup.</p>
+<p>Set expectations: statisticians may go deep on Section A, programmers on Section B, and everyone converges for open practice in Section C. The environment is preconfigured so no one loses time on setup.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -318,7 +318,7 @@ Eric Zhang, PhD
 <li>8:40–9:35 Section A — group sequential design</li>
 <li>9:35–9:45 Break</li>
 <li>9:45–10:40 Section B — ADaM</li>
-<li>10:40–10:55 Section C — modify / build a skill</li>
+<li>10:40–10:55 Section C — practice with the skills</li>
 <li>10:55–11:00 Wrap-up</li>
 </ul>
 <style type="text/css">
@@ -498,7 +498,7 @@ Eric Zhang, PhD
 <p>The full catalog also includes <code>sdtm-oak</code>, <code>clinical-trial-simulation</code>, <code>statistical-reviewer</code>, <code>rounding</code>, and more, plus a skill development <strong>lifecycle</strong> and community benchmarking.</p>
 <aside class="notes">
 <p>Every skill in this workshop repo is copied from pharma-skills without changes to its derivation logic. Credit: admiral skills — Jeff Dickinson (Navitas); group-sequential-design — Eric Zhang.</p>
-<p>Point people at LIFECYCLE.md if they want to contribute a skill — it connects to Section C.</p>
+<p>Point people at LIFECYCLE.md if they want to contribute a skill — a natural next step after Section C.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -531,8 +531,8 @@ Eric Zhang, PhD
 </div><div class="column" style="width:33%;">
 <h3 data-number="1.6.3" id="c-practice-with-the-skills"><span class="header-section-number">1.6.3</span> C · practice with the skills</h3>
 <ul>
-<li>try skills with an example</li>
-<li>Sketch your own</li>
+<li>Try a skill on your own problem</li>
+<li>Instructor support throughout</li>
 </ul>
 </div></div>
 <aside class="notes">
@@ -599,18 +599,17 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="fork-the-workshop-repo" class="slide level2" data-number="2.3">
-<h2><span class="header-section-number">2.3</span> 2. Fork the workshop repo</h2>
-<p>On GitHub, fork <strong>jeffreyad/rpharma-2026-workshop</strong> to your own account.</p>
+<section id="optional-fork-the-workshop-repo" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> 2. <em>(Optional)</em> Fork the workshop repo</h2>
+<p>Want to keep your Section C work after today? Fork <strong>jeffreyad/rpharma-2026-workshop</strong> to your own GitHub account.</p>
 <ul>
-<li>Section C has you modify and sketch a skill — forking gives you somewhere of your own to keep that work after the session ends</li>
-<li>If you signed in above with GitHub, you already have an account — one extra click. <strong>No GitHub account?</strong> Sign up free at <strong><a href="https://github.com/signup" class="uri">https://github.com/signup</a></strong> (about a minute) — you’ll need one for this step regardless of how you signed in to Workbench</li>
-<li>Optional stretch: open a PR back to the source <strong>pharma-skills</strong> project</li>
+<li><strong>Skip it</strong> and you’ll work from the original repo — everything today still works; you just won’t have a place of your own to push changes</li>
+<li>Needs a GitHub account — if you signed in with GitHub, it’s one click. No account? <strong><a href="https://github.com/signup" class="uri">https://github.com/signup</a></strong> (about a minute)</li>
+<li>You can also fork later and copy your work over</li>
 </ul>
 <aside class="notes">
-<p>[Note: is this step actually needed, or does the preconfigured environment already persist each attendee’s work some other way (e.g.&nbsp;a per-user workspace that survives session end)? If it does, cut this slide — don’t add GitHub mechanics to a 3-hour session unless they buy something.</p>
-<p>If we keep it: fork on github.com takes a few clicks and can happen before or while Positron is loading. The next step then clones <em>the attendee’s fork</em>, not the upstream repo, so <code>git push</code> works without a permissions prompt.</p>
-<p>Worth flagging in chat at the top of orientation: anyone who signed in via OpenID (not GitHub) will need a free GitHub account for this step specifically — point them to github.com/signup before you start walking through the fork.]</p>
+<p>Optional by design — don’t hold the room for it. People can fork while Positron is loading, or not at all.</p>
+<p>If someone forks, they paste their fork’s URL into the setup prompt on the next slide and Claude Code clones that instead, so <code>git push</code> works without a permissions prompt.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -627,9 +626,9 @@ Eric Zhang, PhD
 <h2><span class="header-section-number">2.4</span> 3. Open your Positron session</h2>
 <p>In Workbench, start the session and choose the <strong>Positron</strong> IDE.</p>
 <p><strong>Why Positron?</strong> One IDE, <strong>both R and Python</strong> — Section A’s report generator is Python (<code>python-docx</code>), Section B is R (admiral), and Section C touches both. One session covers everything.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>your-username<span class="op">&gt;</span>/rpharma-2026-workshop.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open the <strong>Claude Code</strong> panel — you’ll use it for the next step.</p>
 <aside class="notes">
-<p>[Note: does each attendee land in a pre-cloned copy already, or clone their own fork as shown here? If pre-cloned, add a step to point the <code>origin</code> remote at their fork (or add it as a second remote) so Section C work can still be pushed somewhere persistent: <code>git remote set-url origin https://github.com/&lt;your-username&gt;/rpharma-2026-workshop.git</code>]</p>
+<p>[Note: confirm where Claude Code lives in the workshop Positron image (sidebar panel vs.&nbsp;terminal <code>claude</code>) and name it exactly as attendees will see it.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -642,9 +641,44 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="confirm-youre-ready" class="slide level2" data-number="2.5">
-<h2><span class="header-section-number">2.5</span> 4. Confirm you’re ready</h2>
-<p>From the repo root:</p>
+<section id="set-up-with-claude-code" class="slide level2 smaller" data-number="2.5">
+<h2><span class="header-section-number">2.5</span> 4. Set up with Claude Code</h2>
+<p>Copy this prompt (button at top right of the box) and paste it into Claude Code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>Set up the R/Pharma 2026 workshop repo for me:</span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a>1. If rpharma-2026-workshop is already in my workspace, use that copy.</span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a>   Otherwise clone it into my home directory from my fork, if I pasted</span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a>   its URL here: ______</span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a>   or else from https://github.com/jeffreyad/rpharma-2026-workshop</span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a>2. Find Rscript on this machine and put its path on the "Rscript path:"</span>
+<span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a>   line in the repo's CLAUDE.md.</span>
+<span id="cb1-9"><a href="" aria-hidden="true" tabindex="-1"></a>3. From the repo root, run `Rscript check_setup.R` and show me the report.</span>
+<span id="cb1-10"><a href="" aria-hidden="true" tabindex="-1"></a>4. If any R package shows [FAIL] or [WARN], run</span>
+<span id="cb1-11"><a href="" aria-hidden="true" tabindex="-1"></a>   `Rscript install_packages.R`, then re-run check_setup.R.</span>
+<span id="cb1-12"><a href="" aria-hidden="true" tabindex="-1"></a>5. Do not install R or Python yourself. If either is missing, stop and</span>
+<span id="cb1-13"><a href="" aria-hidden="true" tabindex="-1"></a>   tell me.</span>
+<span id="cb1-14"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="" aria-hidden="true" tabindex="-1"></a>Finish with one line: READY, or what is still failing.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When it says <strong>READY</strong>: in Positron, <strong>File → Open Folder</strong> → <code>rpharma-2026-workshop</code>, then start a <strong>new</strong> Claude Code session there so it picks up the repo’s <code>CLAUDE.md</code> and skills.</p>
+<aside class="notes">
+<p>Forked? Replace the <code>______</code> with your fork’s URL before sending. Not forked? Leave the blank as-is — the agent falls back to the original repo.</p>
+<p>This is the same check the next slide describes, just driven by the agent — and a nice first demo of “describe the task, the agent does it.” Watch the chat for anyone stuck on a [FAIL] that doesn’t clear after the install.</p>
+<p>The fresh session matters: Claude Code reads <code>CLAUDE.md</code> from the folder it starts in, and that file is what routes requests to each skill.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="confirm-youre-ready" class="slide level2" data-number="2.6">
+<h2><span class="header-section-number">2.6</span> 5. Confirm you’re ready</h2>
+<p>Claude Code ran this for you in step 4. To run it yourself, from the repo root:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">source</span>(<span class="st">"check_setup.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prints <code>[ OK ]</code> / <code>[WARN]</code> / <code>[FAIL]</code> per line for:</p>
 <ul>
@@ -669,8 +703,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="you-should-now-see" class="slide level2" data-number="2.6">
-<h2><span class="header-section-number">2.6</span> You should now see…</h2>
+<section id="you-should-now-see" class="slide level2" data-number="2.7">
+<h2><span class="header-section-number">2.7</span> You should now see…</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -685,8 +719,9 @@ Eric Zhang, PhD
 </div>
 </div>
 <ul>
-<li>Positron open in your browser, with <strong>your fork</strong> of the workshop repo in the Explorer</li>
-<li><code>check_setup.R</code> output showing <strong>all checks passed</strong> (no red)</li>
+<li>Positron open in your browser, with the workshop repo (your fork, or the original) open as the folder in the Explorer</li>
+<li>Claude Code reported <strong>READY</strong> — <code>check_setup.R</code> shows <strong>all checks passed</strong> (no red)</li>
+<li>A fresh Claude Code session started in the repo folder</li>
 <li>An R console and a Python console both available</li>
 </ul>
 <aside class="notes">
@@ -709,8 +744,8 @@ Eric Zhang, PhD
 <h1>Section A — Group sequential design</h1>
 
 </section>
-<section id="section-a-what-well-do" class="slide level2" data-number="2.7">
-<h2><span class="header-section-number">2.7</span> Section A — what we’ll do</h2>
+<section id="section-a-what-well-do" class="slide level2" data-number="2.8">
+<h2><span class="header-section-number">2.8</span> Section A — what we’ll do</h2>
 <p>Drive the <strong>group-sequential-design</strong> skill to design a survival trial:</p>
 <ul>
 <li>Survival endpoints (OS / PFS / DFS), interim + final analyses</li>
@@ -736,8 +771,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.8">
-<h2><span class="header-section-number">2.8</span> Section A — how the skill behaves</h2>
+<section id="section-a-how-the-skill-behaves" class="slide level2" data-number="2.9">
+<h2><span class="header-section-number">2.9</span> Section A — how the skill behaves</h2>
 <ul>
 <li>Asks design questions <strong>one at a time</strong>, in plain language, no defaults offered</li>
 <li>Summarises all inputs in a table and waits for your confirmation</li>
@@ -759,8 +794,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.9">
-<h2><span class="header-section-number">2.9</span> Section A — hands-on exercise</h2>
+<section id="section-a-hands-on-exercise" class="slide level2" data-number="2.10">
+<h2><span class="header-section-number">2.10</span> Section A — hands-on exercise</h2>
 <p>Let’s design a Phase 3 Oncology trial</p>
 <aside class="notes">
 <p>FLAG: this section needs Eric’s direct input and review. Do not draft a scenario — the Q&amp;A flow, the specific numbers, and the “what good looks like” checkpoints should be Eric’s. Once provided, expand into full step slides matching the what-we’ll-do / how-it-behaves / hands-on / debrief pattern used elsewhere in this deck.</p>
@@ -776,8 +811,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-a-debrief" class="slide level2" data-number="2.10">
-<h2><span class="header-section-number">2.10</span> Section A — debrief</h2>
+<section id="section-a-debrief" class="slide level2" data-number="2.11">
+<h2><span class="header-section-number">2.11</span> Section A — debrief</h2>
 <ul>
 <li>Are the questions asked by the skill helpful?</li>
 <li>Do the outputs include everything you need?</li>
@@ -802,8 +837,8 @@ Eric Zhang, PhD
 <h1>Section B — ADaM generation</h1>
 
 </section>
-<section id="section-b-what-well-do" class="slide level2 smaller" data-number="2.11">
-<h2><span class="header-section-number">2.11</span> Section B — what we’ll do</h2>
+<section id="section-b-what-well-do" class="slide level2 smaller" data-number="2.12">
+<h2><span class="header-section-number">2.12</span> Section B — what we’ll do</h2>
 <p>Drive the <strong>admiral</strong> skill family to derive ADaM datasets from SDTM:</p>
 <table class="caption-top">
 <thead>
@@ -853,8 +888,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.12">
-<h2><span class="header-section-number">2.12</span> Section B — how the skill behaves</h2>
+<section id="section-b-how-the-skill-behaves" class="slide level2" data-number="2.13">
+<h2><span class="header-section-number">2.13</span> Section B — how the skill behaves</h2>
 <p>When you ask for a derivation, the skilled agent will:</p>
 <ul>
 <li>Generate code <strong>section by section</strong>, not one giant block</li>
@@ -878,14 +913,17 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.13">
-<h2><span class="header-section-number">2.13</span> Section B — hands-on exercise</h2>
+<section id="section-b-hands-on-exercise" class="slide level2" data-number="2.14">
+<h2><span class="header-section-number">2.14</span> Section B — hands-on exercise</h2>
 <p><strong>Step 1 — everyone: derive ADSL</strong></p>
 <p>Prompt to give the agent (verbatim, in chat — not typed as code):</p>
 <blockquote>
 <p>“Using the admiral-adsl skill, derive ADSL from the pharmaversesdtm DM, EX, and DS domains. Include TRT01P/TRT01A, treatment start/end dates, and the SAFFL population flag.”</p>
 </blockquote>
 <p>Watch for: the skill should ask you to confirm the treatment variable mapping and the SAFFL definition before it writes any code — if it doesn’t ask, that’s worth flagging in debrief.</p>
+</section>
+<section id="section-b-hands-on-exercise-continued" class="slide level2" data-number="2.15">
+<h2><span class="header-section-number">2.15</span> Section B — hands-on exercise (continued)</h2>
 <p><strong>Step 2 — pick a track</strong></p>
 <ul>
 <li><strong>Track 1 — ADAE:</strong> “Using the admiral-adae skill and the ADSL you just built, derive ADAE from the pharmaversesdtm AE domain. Include the TEAE flag and AE start/end study day.”</li>
@@ -906,8 +944,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-what-done-looks-like" class="slide level2" data-number="2.14">
-<h2><span class="header-section-number">2.14</span> Section B — what “done” looks like</h2>
+<section id="section-b-what-done-looks-like" class="slide level2" data-number="2.16">
+<h2><span class="header-section-number">2.16</span> Section B — what “done” looks like</h2>
 <ul>
 <li><strong>ADSL:</strong> one row per USUBJID; TRT01P/TRT01A populated for all subjects; SAFFL is <code>"Y"</code>/<code>NA</code>, never <code>"N"</code>; <code>stopifnot()</code> guard for row uniqueness passes</li>
 <li><strong>ADAE (Track 1):</strong> TEAE flag correctly excludes pre-treatment AEs; AE start day computed relative to treatment start, not enrollment; at least one <code># REVIEW:</code> comment on the TEAE window definition</li>
@@ -928,8 +966,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-stretch-goal" class="slide level2" data-number="2.15">
-<h2><span class="header-section-number">2.15</span> Section B — stretch goal</h2>
+<section id="section-b-stretch-goal" class="slide level2" data-number="2.17">
+<h2><span class="header-section-number">2.17</span> Section B — stretch goal</h2>
 <p>Finished early? Two options:</p>
 <ul>
 <li>Run the <em>other</em> track (ADAE if you did BDS, or vice versa)</li>
@@ -949,8 +987,8 @@ Eric Zhang, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-b-debrief" class="slide level2" data-number="2.16">
-<h2><span class="header-section-number">2.16</span> Section B — debrief</h2>
+<section id="section-b-debrief" class="slide level2" data-number="2.18">
+<h2><span class="header-section-number">2.18</span> Section B — debrief</h2>
 <ul>
 <li>Where did the agent place <code># REVIEW:</code> markers, and were they the right places?</li>
 <li>What did <em>you</em> have to decide that the skill correctly refused to guess?</li>
@@ -975,17 +1013,17 @@ Eric Zhang, PhD
 <h1>Section C — Practice with group-sequential-design and admiral</h1>
 
 </section>
-<section id="now-its-your-turn" class="slide level2" data-number="2.17">
-<h2><span class="header-section-number">2.17</span> Now it’s your turn</h2>
+<section id="now-its-your-turn" class="slide level2" data-number="2.19">
+<h2><span class="header-section-number">2.19</span> Now it’s your turn</h2>
 <p>Try one of today’s skills on something from your own work:</p>
 <ul>
 <li><strong>group-sequential-design</strong> — describe a trial you’re actually designing</li>
 <li><strong>admiral</strong> (<code>admiral-adsl</code> / <code>admiral-adae</code> / <code>admiral-bds</code>) — point it at a dataset you work with</li>
 </ul>
-<p>Just describe the task in plain language and see what the agent produces. Commit anything you want to keep to <strong>your fork</strong>. We’re here to help if you get stuck.</p>
+<p>Just describe the task in plain language and see what the agent produces. Forked the repo? Commit anything you want to keep to <strong>your fork</strong>. We’re here to help if you get stuck.</p>
 <aside class="notes">
 <p>Instructor-supported open practice time — no fixed script. Circulate and help people get unstuck rather than walking through a set scenario. Afterward, ask a couple of people to share what they tried and what stood out, then move to wrap-up.</p>
-<p>[Note: if the “fork the repo” step (Environment orientation, #2) is cut, swap “commit anything you want to keep to your fork” for however work actually persists — e.g.&nbsp;“download what you want to keep” or “it stays in your Workbench home directory.”]</p>
+<p>Forking is optional (Environment orientation, #2). Anyone who didn’t fork and wants to keep their work can fork now and copy files over, or download them from the Positron Explorer (right-click → Download).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1008,11 +1046,11 @@ Eric Zhang, PhD
 <ul>
 <li>Ran the <strong>group-sequential-design</strong> skill to design and verify a survival trial</li>
 <li>Ran the <strong>admiral</strong> skills to derive ADaM datasets from SDTM</li>
-<li>Read a skill’s internals, <strong>modified</strong> one, and <strong>sketched</strong> your own</li>
+<li>Tried the skills on a problem from <strong>your own work</strong></li>
 </ul>
 <p>All driven by describing the task in natural language — the skill supplied the discipline.</p>
 <aside class="notes">
-<p>Land the through-line: the value is not “AI writes code fast.” It is that a reviewed, version-controlled workflow runs consistently every time, with review markers exactly where human judgment is required — and that you can now build those workflows yourself.</p>
+<p>Land the through-line: the value is not “AI writes code fast.” It is that a reviewed, version-controlled workflow runs consistently every time, with review markers exactly where human judgment is required — and that you can now apply those workflows to your own work.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1028,7 +1066,7 @@ Eric Zhang, PhD
 <section id="take-it-with-you" class="slide level2" data-number="3.2">
 <h2><span class="header-section-number">3.2</span> Take it with you</h2>
 <ul>
-<li><strong>Your fork</strong> — has your Section C work; keep building on it</li>
+<li><strong>Your fork</strong> (if you made one) — has your Section C work; keep building on it</li>
 <li><strong>Workshop repo:</strong> <a href="https://github.com/jeffreyad/rpharma-2026-workshop" class="uri">https://github.com/jeffreyad/rpharma-2026-workshop</a></li>
 <li><strong>pharma-skills:</strong> <a href="https://github.com/RConsortium/pharma-skills/tree/main" class="uri">https://github.com/RConsortium/pharma-skills/tree/main</a> — full catalog, LIFECYCLE.md, benchmarking</li>
 <li><strong>admiral:</strong> <a href="https://pharmaverse.github.io/admiral/" class="uri">https://pharmaverse.github.io/admiral/</a> · <a href="https://www.cdisc.org/standards/foundational/adam">CDISC ADaMIG v1.3</a></li>
@@ -1037,7 +1075,7 @@ Eric Zhang, PhD
 </ul>
 <p>Install into your own project:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">npx</span> skills add RConsortium/pharma-skills <span class="at">--skill</span> admiral-adsl <span class="at">--skill</span> group-sequential-design</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Running the workshop repo itself on your own machine (rather than the cloud environment)? Your fork has <code>install_packages.R</code> + <code>check_setup.R</code> and a full troubleshooting guide in <code>INSTALL.md</code>.</p>
+<p>Running the workshop repo itself on your own machine (rather than the cloud environment)? The repo has <code>install_packages.R</code> + <code>check_setup.R</code> and a full troubleshooting guide in <code>INSTALL.md</code> — or paste the step 4 setup prompt into Claude Code.</p>
 <aside class="notes">
 <p>Also mention Option A from the repo README — open the repo as your project and let its CLAUDE.md route the agent to each skill; set your local Rscript path for the GSD skill.</p>
 <style type="text/css">
