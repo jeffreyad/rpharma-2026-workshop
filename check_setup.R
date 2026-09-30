@@ -15,6 +15,15 @@
 
 .results <- new.env()
 .results$rows <- list()
+.results$lines <- character()
+
+# Buffer output and print it all at the end, so the report stays in one
+# readable block even when sourced with echo = TRUE (which would otherwise
+# interleave it with the echoed code).
+say <- function(...) {
+  .results$lines <- c(.results$lines, paste0(...))
+  invisible(NULL)
+}
 
 `%||%` <- function(a, b) if (is.null(a) || length(a) == 0 || is.na(a)) b else a
 
@@ -31,7 +40,7 @@ record <- function(status, label, detail = "", fix = NULL) {
     WARN = "[WARN]"
   )
   line <- sprintf("%s  %-34s %s", tag, label, detail)
-  message(trimws(line, which = "right"))
+  say(trimws(line, which = "right"))
   invisible(NULL)
 }
 
@@ -55,7 +64,7 @@ check_pkg <- function(pkg, min_version = NULL, group = "") {
 
 # -- R version -------------------------------------------------------------
 
-message("\n== R ==")
+say("\n== R ==")
 r_ver <- paste(R.version$major, R.version$minor, sep = ".")
 if (utils::compareVersion(r_ver, "4.2.0") < 0) {
   record("FAIL", "R version", sprintf("%s installed; >= 4.2 required", r_ver))
@@ -65,7 +74,7 @@ if (utils::compareVersion(r_ver, "4.2.0") < 0) {
 
 # -- admiral thread (Section B) -----------------------------------------------
 
-message("\n== admiral / ADaM packages (Section B) ==")
+say("\n== admiral / ADaM packages (Section B) ==")
 check_pkg("admiral", min_version = "1.2.0", group = "core")
 check_pkg("dplyr",             group = "core")
 check_pkg("lubridate",         group = "core")
@@ -76,7 +85,7 @@ check_pkg("xportr",            group = "submission output")
 
 # -- group sequential design thread (Section A) -----------------------------
 
-message("\n== Group sequential design packages (Section A) ==")
+say("\n== Group sequential design packages (Section A) ==")
 check_pkg("gsDesign",     group = "boundaries")
 check_pkg("gsDesign2",    group = "boundaries")
 check_pkg("lrstat",       group = "verification")
@@ -85,7 +94,7 @@ check_pkg("jsonlite",     group = "results I/O")
 
 # -- Python + python-docx (Section A report) --------------------------------
 
-message("\n== Python (GSD Word report) ==")
+say("\n== Python (GSD Word report) ==")
 
 # Probe a candidate interpreter. Returns NULL if it is not a real, working
 # Python >= 3.8. This deliberately weeds out the Windows "App execution alias"
@@ -145,46 +154,48 @@ n_fail <- sum(statuses == "FAIL")
 n_warn <- sum(statuses == "WARN")
 n_ok   <- sum(statuses == "OK")
 
-message("\n", strrep("-", 60))
-message(sprintf("Summary:  %d OK   %d WARN   %d FAIL", n_ok, n_warn, n_fail))
+say("\n", strrep("-", 60))
+say(sprintf("Summary:  %d OK   %d WARN   %d FAIL", n_ok, n_warn, n_fail))
 
 if (n_fail == 0 && n_warn == 0) {
-  message("All checks passed — you are ready to start.")
+  say("All checks passed — you are ready to start.")
 } else if (n_fail == 0) {
-  message("No blockers, but review the WARN lines above.")
+  say("No blockers, but review the WARN lines above.")
 } else {
   bad <- Filter(function(r) r$status %in% c("FAIL", "WARN"), .results$rows)
   fixes <- unique(vapply(bad, function(r) r$fix %||% "", character(1)))
   fixes <- fixes[nzchar(fixes)]
 
   if (length(fixes) > 0) {
-    message("ACTION NEEDED — run this, then re-run check_setup.R:\n")
-    for (f in fixes) message("    ", f)
-    message("")
+    say("ACTION NEEDED — run this, then re-run check_setup.R:\n")
+    for (f in fixes) say("    ", f)
+    say("")
   }
 
-  message("Full list of what's failing:")
+  say("Full list of what's failing:")
   for (r in bad) {
     line <- sprintf("  - [%s] %s: %s", r$status, r$label, r$detail)
     if (!is.null(r$fix)) line <- paste0(line, "  -->  ", r$fix)
-    message(line)
+    say(line)
   }
 
   # R version has no scripted fix — call it out explicitly so it isn't lost
   # in the noise above, since it blocks everything else on this machine.
   r_ver_bad <- any(vapply(bad, function(r) r$label == "R version", logical(1)))
   if (r_ver_bad) {
-    message("\nR itself is too old — install_packages.R can't fix that.",
-            " Install R >= 4.2 from https://cran.r-project.org/ first.")
+    say("\nR itself is too old — install_packages.R can't fix that.",
+        " Install R >= 4.2 from https://cran.r-project.org/ first.")
   }
   py_missing <- any(vapply(bad, function(r) r$label == "python" && r$status == "FAIL", logical(1)))
   if (py_missing) {
-    message("\nNo Python found on PATH — install_packages.R only covers R",
-            " packages. Install Python >= 3.8 from https://python.org/ first,",
-            " then  pip install python-docx.")
+    say("\nNo Python found on PATH — install_packages.R only covers R",
+        " packages. Install Python >= 3.8 from https://python.org/ first,",
+        " then  pip install python-docx.")
   }
 }
-message(strrep("-", 60))
+say(strrep("-", 60))
+
+message(paste(.results$lines, collapse = "\n"))
 
 # Non-zero exit when run via `Rscript check_setup.R` and something failed.
 if (!interactive() && n_fail > 0) quit(status = 1, save = "no")
